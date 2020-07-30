@@ -1,0 +1,40 @@
+---
+title: "Basic Plotly Example"
+author: "TARUN"
+date: "30/07/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Plot
+```{r echo=TRUE}
+suppressPackageStartupMessages(library(plotly))
+p <- suppressWarnings(plot_ly(mtcars,x = ~wt,y = ~mpg,
+     color = as.factor(mtcars$cyl),type = "scatter",mode = "markers"))
+```
+
+## Actual Plot
+```{r echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Plotly Example",fig.align='center'}
+p
+```
+
+## Code for a 3D plot
+```{r,echo=TRUE}
+p2 <- plot_ly(iris,x=iris$Sepal.Length,y = iris$Petal.Length,
+      z=iris$Species,color = as.factor(iris$Species),type = "scatter3d")
+```
+
+## 3D Plot
+```{r,echo=FALSE,warning=FALSE,message=FALSE,fig.align='center',fig.cap="3D Plot using plotly"}
+p2
+```
+
+## THANK YOU
+
+
+
+
